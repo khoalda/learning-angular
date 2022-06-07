@@ -1,3 +1,22 @@
+<label>Server Name</label>
+<p>one-way binding</p>
+<input 
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)" 
+>
+  <!-- $event is a reserved variable name provided by DOM when working with event binding to indicate the data emitted with that event -->
+
+<p>two-way binding</p> 
+<input 
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+>
+<!-- using directives -->
+
+<h3>{{ serverName }}</h3>
+
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -11,6 +30,7 @@
 <div [innerText]="allowNewServer"></div>
 
 <p>{{ serverCreationStatus }}</p>
+<p *ngIf="servercreated">Server was created, its name is {{serverName}}</p>
 
 <!-- normal selector -->
 <!-- <app-server></app-server>
@@ -23,5 +43,8 @@
 <div app-server></div> -->
 
 <!-- class selector -->
-<div class="app-server"></div>
-<div class="app-server"></div>
+<!-- <div class="app-server"></div>
+<div class="app-server"></div> -->
+
+
+<app-server *ngFor="let server of servers"></app-server>

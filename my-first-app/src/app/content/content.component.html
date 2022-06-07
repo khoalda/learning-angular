@@ -1,0 +1,21 @@
+<button
+  class="btn btn-primary"
+  (click)="toggleInfo()"
+>
+  Toggle Information
+</button>
+
+<p *ngIf="showInfo">This is a secret information</p>
+
+<button
+  class="btn btn-primary"
+  (click)="pushToList()"
+>
+  Add Timestamp
+</button>
+
+<p *ngFor="let num of this.list; let i = index"
+    [ngStyle]="{backgroundColor: i > 4 ? 'green' : 'transparent'}"
+    [ngClass]="{yellowText: i > 4}"
+>{{num}}</p>
+
