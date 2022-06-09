@@ -13,6 +13,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatExpansionModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [PostsService],  // creating only 1 instance of PostsService for the entire app
   bootstrap: [AppComponent]
 })
 export class AppModule { }
