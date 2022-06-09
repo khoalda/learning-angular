@@ -10,11 +10,14 @@
 <!-- using two-way binding -->
 <mat-card>
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+    <input matInput type="text" [(ngModel)]="enteredTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary"
   (click)="onSavePost()">Save Post</button>
 </mat-card>
 
-<p>{{ newPost }}</p>
+<!-- <p>{{ newPost }}</p> -->
 
