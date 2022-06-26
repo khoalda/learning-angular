@@ -7,14 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +31,10 @@ import { PostsService } from './posts/posts.service';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule,
   ],
-  providers: [PostsService],  // creating only 1 instance of PostsService for the entire app
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
 import { Post } from "./post.model"
 import { Subject } from "rxjs"; // ~EventEmitter
-// import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 
-// @Injectable({providedIn: 'root'})
+
+@Injectable({providedIn: 'root'})
 export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
